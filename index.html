@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mazda RX-7 FD3S — Painel de Dados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 3 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+
+    <!-- DataTables (com tema integrado ao Bootstrap 3) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.11/css/dataTables.bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="loading">carregando dados do RX-7…</div>
+
+    <!-- Navbar (Bootstrap 3) -->
+    <nav class="navbar navbar-rx7">
+      <div class="container">
+        <div class="navbar-header">
+          <span class="navbar-brand"
+            >RX-7<span class="brand-dot">.</span>FD</span
+          >
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#featured">Destaque</a></li>
+          <li><a href="#power">Curva de potência</a></li>
+          <li><a href="#comparison">Versões</a></li>
+          <li><a href="#table">Tabela</a></li>
+          <li><a href="#about-data">Sobre os dados</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero" id="featured">
+      <div class="container">
+        <h1 class="hero-title" id="hero-title">Mazda RX-7</h1>
+        <p class="hero-subtitle" id="hero-subtitle">carregando…</p>
+
+        <div class="instrument-cluster">
+          <div class="instrument">
+            <div class="display-num" id="stat-power">—</div>
+            <div class="div-display-label-and-button">
+              <div class="display-label">potência</div>
+              <button id="unit-toggle" class="btn-unit-toggle" type="button">
+                kW
+              </button>
+            </div>
+          </div>
+          <div class="instrument">
+            <div class="display-num" id="stat-accel">—</div>
+            <div class="display-label">0–100 km/h</div>
+          </div>
+          <div class="instrument">
+            <div class="display-num" id="stat-topspeed">—</div>
+            <div class="display-label">velocidade máxima</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="section">
+      <div class="container">
+        <div>
+          <img
+            src="assets/rx-7.webp"
+            alt="Imagem do carro rx-7"
+            class="image-wrap"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- Gráfico de potência x torque -->
+    <section class="section" id="power">
+      <div class="container">
+        <h2 class="section-heading">Curva de potência e torque</h2>
+        <p class="section-support">
+          Dado fictício de dinamômetro para a versão Type R Bathurst (1997), por
+          faixa de rotação.
+        </p>
+        <div class="panel">
+          <div class="chart-container" id="power-chart"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gráfico comparativo -->
+    <section class="section" id="comparison">
+      <div class="container">
+        <h2 class="section-heading">Potência por versão ao longo dos anos</h2>
+        <p class="section-support" id="avg-power">calculando média…</p>
+        <div class="panel panel-alt">
+          <div class="chart-container" id="comparison-chart"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabela -->
+    <section class="section" id="table">
+      <div class="container">
+        <h2 class="section-heading">Todas as versões</h2>
+        <p class="section-support">Busque e ordene por qualquer coluna.</p>
+        <table id="versions-table" class="table table-rx7" style="width: 100%">
+          <thead>
+            <tr>
+              <th>Ano</th>
+              <th>Versão</th>
+              <th>Potência</th>
+              <th>Torque</th>
+              <th>Peso</th>
+              <th>0–100 km/h</th>
+              <th>Vel. máxima</th>
+              <th>Preço estimado</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <!-- preenchido via JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Sobre os dados / AJAX -->
+    <section class="section" id="about-data" style="border-bottom: none">
+      <div class="container">
+        <h2 class="section-heading">Como os dados chegam até aqui</h2>
+        <p class="section-support">
+          Esta página não tem um servidor de verdade por trás —
+          <code>js/data.js</code> simula uma chamada de API assíncrona
+          devolvendo uma Promise, exatamente como um <code>fetch()</code> real
+          faria.
+        </p>
+        <div class="code-note">
+          fetchRx7Data().then(data =&gt; renderPage(data))
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        Projeto de estudo — dados fictícios sobre o Mazda RX-7 FD3S, sem vínculo
+        com a Mazda Motor Corporation.
+      </div>
+    </footer>
+
+    <!-- jQuery (dependência do Bootstrap 3 e do DataTables) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap 3 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- DataTables -->
+    <script src="https://cdn.datatables.net/1.13.11/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.11/js/dataTables.bootstrap.min.js"></script>
+    <!-- Highcharts -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

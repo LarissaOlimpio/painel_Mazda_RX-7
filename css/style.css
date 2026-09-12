@@ -1,0 +1,254 @@
+:root {
+  --bg: #14171a;
+  --bg-panel: #1c2024;
+  --line: rgba(255, 255, 255, 0.08);
+  --text: #e7e9ec;
+  --text-muted: #8b929c;
+  --accent: #ff5a3c; /* vermelho tacômetro */
+  --accent-2: #2fb8cf; /* azul manômetro de boost */
+  --accent-3: #f2a71b; /* âmbar */
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    "Inter",
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  line-height: 1.55;
+}
+
+h1,
+h2,
+h3,
+.display-num {
+  font-family: "Rajdhani", "Inter", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+a {
+  color: var(--accent-2);
+}
+a:hover,
+a:focus {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--accent);
+  color: #14171a;
+}
+
+/* ---------- Navbar ---------- */
+.navbar-rx7 {
+  background: var(--bg);
+  border: none;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 0;
+  border-radius: 0;
+}
+.navbar-rx7 .navbar-brand {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--text);
+  padding-top: 16px;
+}
+.navbar-rx7 .navbar-brand .brand-dot {
+  color: var(--accent);
+}
+.navbar-rx7 .navbar-nav > li > a {
+  color: var(--text-muted);
+  font-size: 14px;
+  padding-top: 18px;
+}
+.navbar-rx7 .navbar-nav > li > a:hover {
+  color: var(--text);
+  background: transparent;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 72px 0 48px;
+  border-bottom: 1px solid var(--line);
+}
+.hero-title {
+  font-size: 44px;
+  margin: 0 0 6px;
+}
+.hero-subtitle {
+  color: var(--text-muted);
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.instrument-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+.instrument {
+  padding: 0 32px 0 0;
+  margin-right: 32px;
+  border-right: 1px solid var(--line);
+}
+.instrument:last-child {
+  border-right: none;
+}
+.instrument .display-num {
+  font-size: 42px;
+  color: var(--accent);
+  line-height: 1;
+}
+.instrument .display-label {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-top: 8px;
+}
+.div-display-label-and-button {
+  display: flex;
+  justify-content: center;
+}
+.btn-unit-toggle {
+  margin-left: 8px;
+  padding: 2px 10px;
+  font-size: 12px;
+  line-height: 1.4;
+  background: transparent;
+  color: var(--accent-2);
+  border: 1px solid var(--accent-2);
+  border-radius: 2px;
+}
+.btn-unit-toggle:hover,
+.btn-unit-toggle:focus {
+  background: var(--accent-2);
+  color: var(--bg);
+}
+/* ---------- Image ---------- */
+.image-wrap {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
+/* ---------- Seções ---------- */
+.section {
+  padding: 56px 0;
+  border-bottom: 1px solid var(--line);
+}
+.section-heading {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+.section-support {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  padding: 24px;
+}
+.panel.panel-alt {
+  border-left-color: var(--accent-2);
+}
+
+.chart-container {
+  height: 340px;
+}
+
+/* ---------- Tabela / DataTables ---------- */
+.table-rx7 {
+  background: var(--bg-panel);
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+.table-rx7 > thead > tr > th {
+  border-bottom: 1px solid var(--line);
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 13px;
+}
+.table-rx7 > tbody > tr > td {
+  border-top: 1px solid var(--line);
+  vertical-align: middle;
+}
+.table-rx7 > tbody > tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+div.dataTables_wrapper div.dataTables_filter input {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 2px;
+}
+div.dataTables_wrapper div.dataTables_filter label {
+  color: var(--text-muted);
+}
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after {
+  color: var(--accent-2);
+}
+
+/* ---------- Bloco "como os dados chegam" ---------- */
+.code-note {
+  font-family: "Menlo", "Consolas", monospace;
+  font-size: 13px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  padding: 16px 20px;
+  color: var(--accent-2);
+  overflow-x: auto;
+}
+
+/* ---------- Loading ---------- */
+#loading {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rajdhani", sans-serif;
+  letter-spacing: 0.04em;
+  z-index: 999;
+  transition: opacity 0.3s ease;
+}
+#loading.d-none {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  padding: 32px 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: 32px;
+  }
+  .instrument {
+    border-right: none;
+    margin-right: 0;
+    padding-right: 0;
+    margin-bottom: 20px;
+    flex-basis: 100%;
+  }
+}
