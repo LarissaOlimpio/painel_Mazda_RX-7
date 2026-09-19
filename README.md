@@ -3,6 +3,7 @@
 Projeto de estudo para praticar Bootstrap 3, Highcharts, DataTables,
 closures/IIFE e recursos modernos do JavaScript (ES6+), usando dados
 **fictícios** sobre o Mazda RX-7 FD3S como pretexto.
+<img width="1514" height="948" alt="painel_car" src="https://github.com/user-attachments/assets/59ac2948-2faf-4f07-8d46-e8ac0f5ab2f1" />
 
 ## Estrutura
 
