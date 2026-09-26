@@ -1,9 +1,10 @@
 const rx7Database = {
   model: "Mazda RX-7 FD3S",
+
   engine: "13B-REW twin-rotor sequential twin-turbo (1.3L / 2x654cc)",
+
   transmission: "5-speed manual",
 
-  // The "featured car" shown in the page hero
   featured: {
     year: 1997,
     trim: "Type R Bathurst",
@@ -14,8 +15,6 @@ const rx7Database = {
     topSpeedKmh: 255,
   },
 
-  // Power x torque curve by RPM (fictional dyno data),
-  // used in the Highcharts line chart
   powerCurve: [
     { rpm: 2000, hp: 60, torqueNm: 140 },
     { rpm: 3000, hp: 110, torqueNm: 230 },
@@ -28,8 +27,18 @@ const rx7Database = {
     { rpm: 8000, hp: 230, torqueNm: 220 },
   ],
 
-  // Timeline of trims, used in the comparison chart and the table
   versions: [
+    {
+      year: 1991,
+      trim: "Base",
+      powerHp: 205,
+      torqueKgm: 27.0,
+      weightKg: 1300,
+      zeroToHundredS: 6.8,
+      topSpeedKmh: 230,
+      estimatedPrice: 280000,
+    },
+
     {
       year: 1992,
       trim: "Type R",
@@ -40,6 +49,7 @@ const rx7Database = {
       topSpeedKmh: 250,
       estimatedPrice: 320000,
     },
+
     {
       year: 1993,
       trim: "Touring X",
@@ -50,6 +60,18 @@ const rx7Database = {
       topSpeedKmh: 245,
       estimatedPrice: 295000,
     },
+
+    {
+      year: 1994,
+      trim: "GT",
+      powerHp: 220,
+      torqueKgm: 28.0,
+      weightKg: 1290,
+      zeroToHundredS: 6.5,
+      topSpeedKmh: 240,
+      estimatedPrice: 300000,
+    },
+
     {
       year: 1995,
       trim: "Type RZ",
@@ -60,6 +82,29 @@ const rx7Database = {
       topSpeedKmh: 255,
       estimatedPrice: 340000,
     },
+
+    {
+      year: 1996,
+      trim: "Type S",
+      powerHp: 250,
+      torqueKgm: 29.5,
+      weightKg: 1180,
+      zeroToHundredS: 5.9,
+      topSpeedKmh: 250,
+      estimatedPrice: 335000,
+    },
+
+    {
+      year: 1996,
+      trim: "Grand Touring",
+      powerHp: 230,
+      torqueKgm: 28.5,
+      weightKg: 1340,
+      zeroToHundredS: 6.4,
+      topSpeedKmh: 240,
+      estimatedPrice: 310000,
+    },
+
     {
       year: 1997,
       trim: "Type R Bathurst",
@@ -70,6 +115,18 @@ const rx7Database = {
       topSpeedKmh: 255,
       estimatedPrice: 350000,
     },
+
+    {
+      year: 1998,
+      trim: "Type RS",
+      powerHp: 270,
+      torqueKgm: 31.5,
+      weightKg: 1160,
+      zeroToHundredS: 5.4,
+      topSpeedKmh: 258,
+      estimatedPrice: 365000,
+    },
+
     {
       year: 1999,
       trim: "Spirit R Type A",
@@ -80,6 +137,29 @@ const rx7Database = {
       topSpeedKmh: 260,
       estimatedPrice: 380000,
     },
+
+    {
+      year: 2000,
+      trim: "RZ Lightweight",
+      powerHp: 285,
+      torqueKgm: 32.0,
+      weightKg: 1120,
+      zeroToHundredS: 5.1,
+      topSpeedKmh: 262,
+      estimatedPrice: 395000,
+    },
+
+    {
+      year: 2001,
+      trim: "Competition",
+      powerHp: 300,
+      torqueKgm: 33.0,
+      weightKg: 1080,
+      zeroToHundredS: 5.0,
+      topSpeedKmh: 265,
+      estimatedPrice: 405000,
+    },
+
     {
       year: 2002,
       trim: "Spirit R Type A Final",
@@ -89,6 +169,17 @@ const rx7Database = {
       zeroToHundredS: 5.2,
       topSpeedKmh: 260,
       estimatedPrice: 410000,
+    },
+
+    {
+      year: 2002,
+      trim: "Track Edition",
+      powerHp: 310,
+      torqueKgm: 33.5,
+      weightKg: 1100,
+      zeroToHundredS: 4.9,
+      topSpeedKmh: 268,
+      estimatedPrice: 425000,
     },
   ],
 };
